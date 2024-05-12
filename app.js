@@ -16,7 +16,7 @@ const pool = new Pool({
 // Маршрут для получения всех таблиц
 app.get('/', async (req, res) => {
     try {
-      const query = "SELECT table_name FROM information_schema.tables WHERE table_schema='public';";
+      const query = "SELECT id, name FROM student;";
       const { rows } = await pool.query(query);
       res.json(rows);
     } catch (error) {
